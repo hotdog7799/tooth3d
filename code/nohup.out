@@ -1,0 +1,1399 @@
+2025-07-29 20:48:41,751 - INFO - ======================================================================
+2025-07-29 20:48:41,751 - INFO - 3D ADMM Parameter Sweep 시작
+2025-07-29 20:48:41,751 - INFO - ======================================================================
+2025-07-29 20:48:41,752 - INFO - PSF stack 준비 중...
+2025-07-29 20:48:41,830 - INFO - 발견된 PSF 파일 수: 102
+2025-07-29 20:48:41,830 - INFO - 선택된 PSF 인덱스: [17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37]
+2025-07-29 20:48:41,830 - INFO - 총 11개 PSF 선택됨
+2025-07-29 20:48:43,972 - INFO - PSF stack 준비 완료: /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+2025-07-29 20:48:43,973 - INFO - 자동 파라미터 최적화 모드: smart_grid
+2025-07-29 20:48:43,974 - INFO - 총 15개 실험 예정
+2025-07-29 20:48:43,974 - INFO - 
+진행률: 1/15
+2025-07-29 20:48:43,975 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic
+2025-07-29 20:48:43,975 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-06, τn=0.06, reg=anisotropic
+Discovered 102 PSF image files:
+  0: 03.3.png -> 3.3
+  1: 05.0.png -> 5.0
+  2: 05.1.png -> 5.1
+  3: 05.2.png -> 5.2
+  4: 05.3.png -> 5.3
+  5: 05.4.png -> 5.4
+  6: 05.5.png -> 5.5
+  7: 05.6.png -> 5.6
+  8: 05.7.png -> 5.7
+  9: 05.8.png -> 5.8
+  10: 05.9.png -> 5.9
+  11: 06.0.png -> 6.0
+  12: 06.1.png -> 6.1
+  13: 06.2.png -> 6.2
+  14: 06.3.png -> 6.3
+  15: 06.4.png -> 6.4
+  16: 06.5.png -> 6.5
+  17: 06.6.png -> 6.6
+  18: 06.7.png -> 6.7
+  19: 06.8.png -> 6.8
+  20: 06.9.png -> 6.9
+  21: 07.0.png -> 7.0
+  22: 07.1.png -> 7.1
+  23: 07.2.png -> 7.2
+  24: 07.3.png -> 7.3
+  25: 07.4.png -> 7.4
+  26: 07.5.png -> 7.5
+  27: 07.6.png -> 7.6
+  28: 07.7.png -> 7.7
+  29: 07.8.png -> 7.8
+  30: 07.9.png -> 7.9
+  31: 08.0.png -> 8.0
+  32: 08.1.png -> 8.1
+  33: 08.2.png -> 8.2
+  34: 08.3.png -> 8.3
+  35: 08.4.png -> 8.4
+  36: 08.5.png -> 8.5
+  37: 08.6.png -> 8.6
+  38: 08.7.png -> 8.7
+  39: 08.8.png -> 8.8
+  40: 08.9.png -> 8.9
+  41: 09.0.png -> 9.0
+  42: 09.1.png -> 9.1
+  43: 09.2.png -> 9.2
+  44: 09.3.png -> 9.3
+  45: 09.4.png -> 9.4
+  46: 09.5.png -> 9.5
+  47: 09.6.png -> 9.6
+  48: 09.7.png -> 9.7
+  49: 09.8.png -> 9.8
+  50: 09.9.png -> 9.9
+  51: 10.0.png -> 10.0
+  52: 10.1.png -> 10.1
+  53: 10.2.png -> 10.2
+  54: 10.3.png -> 10.3
+  55: 10.4.png -> 10.4
+  56: 10.5.png -> 10.5
+  57: 10.6.png -> 10.6
+  58: 10.7.png -> 10.7
+  59: 10.8.png -> 10.8
+  60: 10.9.png -> 10.9
+  61: 11.0.png -> 11.0
+  62: 11.1.png -> 11.1
+  63: 11.2.png -> 11.2
+  64: 11.3.png -> 11.3
+  65: 11.4.png -> 11.4
+  66: 11.5.png -> 11.5
+  67: 11.6.png -> 11.6
+  68: 11.7.png -> 11.7
+  69: 11.8.png -> 11.8
+  70: 11.9.png -> 11.9
+  71: 12.0.png -> 12.0
+  72: 12.1.png -> 12.1
+  73: 12.2.png -> 12.2
+  74: 12.3.png -> 12.3
+  75: 12.4.png -> 12.4
+  76: 12.5.png -> 12.5
+  77: 12.6.png -> 12.6
+  78: 12.7.png -> 12.7
+  79: 12.8.png -> 12.8
+  80: 12.9.png -> 12.9
+  81: 13.0.png -> 13.0
+  82: 13.1.png -> 13.1
+  83: 13.2.png -> 13.2
+  84: 13.3.png -> 13.3
+  85: 13.4.png -> 13.4
+  86: 13.5.png -> 13.5
+  87: 13.6.png -> 13.6
+  88: 13.7.png -> 13.7
+  89: 13.8.png -> 13.8
+  90: 13.9.png -> 13.9
+  91: 14.0.png -> 14.0
+  92: 14.1.png -> 14.1
+  93: 14.2.png -> 14.2
+  94: 14.3.png -> 14.3
+  95: 14.4.png -> 14.4
+  96: 14.5.png -> 14.5
+  97: 14.6.png -> 14.6
+  98: 14.7.png -> 14.7
+  99: 14.8.png -> 14.8
+  100: 14.9.png -> 14.9
+  101: 15.0.png -> 15.0
+Processing PSF stack with config hash: 39f60737
+Selected PSF indices: [17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37]
+Found existing PSF stack: psf_stack_39f60737_20250729_204539.mat
+Using cached PSF stack: /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+스마트 그리드 탐색: 15개 조합 생성
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-06
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+iter:0 time:0.470 cost:4089.177 data_fidelity:4088.913 regularizer_penalty:0.264
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/projections_iter_0.png
+iter:99 time:9.990 cost:67.450 data_fidelity:67.222 regularizer_penalty:0.227
+iter:199 time:16.960 cost:220.325 data_fidelity:220.186 regularizer_penalty:0.139
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/projections_iter_199.png
+iter:299 time:26.530 cost:349.485 data_fidelity:349.322 regularizer_penalty:0.163
+iter:399 time:34.920 cost:411.628 data_fidelity:411.482 regularizer_penalty:0.147
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/projections_iter_399.png
+iter:499 time:44.520 cost:453.725 data_fidelity:453.540 regularizer_penalty:0.186
+iter:599 time:51.810 cost:469.946 data_fidelity:469.735 regularizer_penalty:0.210
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/projections_iter_599.png
+iter:699 time:60.940 cost:504.594 data_fidelity:504.415 regularizer_penalty:0.179
+iter:799 time:67.720 cost:522.649 data_fidelity:522.492 regularizer_penalty:0.157
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/projections_iter_799.png
+iter:899 time:76.610 cost:544.055 data_fidelity:543.869 regularizer_penalty:0.186
+iter:999 time:83.940 cost:548.750 data_fidelity:548.533 regularizer_penalty:0.218
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/iter_999_slices
+2025-07-29 20:50:18,616 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic (소요시간: 90.6초)
+2025-07-29 20:50:18,942 - INFO - 
+진행률: 2/15
+2025-07-29 20:50:18,942 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv
+2025-07-29 20:50:18,942 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-06, τn=0.06, reg=3dtv
+2025-07-29 20:51:43,271 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv (소요시간: 80.0초)
+2025-07-29 20:51:43,479 - INFO - 
+진행률: 3/15
+2025-07-29 20:51:43,479 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic
+2025-07-29 20:51:43,479 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-06, τn=0.08, reg=anisotropic
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 85.9
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_anisotropic/0729_204843_mono_tau0.0006_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-06
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: TV3DRegularizer
+iter:0 time:0.080 cost:4096.314 data_fidelity:4088.913 regularizer_penalty:7.401
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/projections_iter_0.png
+iter:99 time:8.980 cost:61.456 data_fidelity:59.727 regularizer_penalty:1.729
+iter:199 time:14.190 cost:148.402 data_fidelity:146.756 regularizer_penalty:1.646
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/projections_iter_199.png
+iter:299 time:22.190 cost:359.259 data_fidelity:357.747 regularizer_penalty:1.513
+iter:399 time:28.230 cost:483.745 data_fidelity:482.312 regularizer_penalty:1.433
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/projections_iter_399.png
+iter:499 time:36.780 cost:534.494 data_fidelity:533.075 regularizer_penalty:1.419
+iter:599 time:43.920 cost:596.859 data_fidelity:595.455 regularizer_penalty:1.404
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/projections_iter_599.png
+iter:699 time:52.100 cost:642.111 data_fidelity:640.728 regularizer_penalty:1.383
+iter:799 time:58.420 cost:667.675 data_fidelity:666.288 regularizer_penalty:1.387
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/projections_iter_799.png
+iter:899 time:67.000 cost:704.244 data_fidelity:702.875 regularizer_penalty:1.369
+iter:999 time:73.610 cost:726.225 data_fidelity:724.867 regularizer_penalty:1.358
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 75.45
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.06_3dtv/0729_205018_mono_tau0.0006_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-06
+tau_n = 0.08
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+2025-07-29 20:53:25,262 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic (소요시간: 96.1초)
+2025-07-29 20:53:25,492 - INFO - 
+진행률: 4/15
+2025-07-29 20:53:25,493 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv
+2025-07-29 20:53:25,493 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-06, τn=0.08, reg=3dtv
+iter:0 time:0.090 cost:4089.177 data_fidelity:4088.913 regularizer_penalty:0.264
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/projections_iter_0.png
+iter:99 time:11.030 cost:67.450 data_fidelity:67.222 regularizer_penalty:0.227
+iter:199 time:18.980 cost:220.325 data_fidelity:220.186 regularizer_penalty:0.139
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/projections_iter_199.png
+iter:299 time:31.520 cost:349.485 data_fidelity:349.322 regularizer_penalty:0.163
+iter:399 time:38.450 cost:411.628 data_fidelity:411.482 regularizer_penalty:0.147
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/projections_iter_399.png
+iter:499 time:48.030 cost:453.725 data_fidelity:453.540 regularizer_penalty:0.186
+iter:599 time:55.180 cost:469.946 data_fidelity:469.735 regularizer_penalty:0.210
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/projections_iter_599.png
+iter:699 time:64.440 cost:504.594 data_fidelity:504.415 regularizer_penalty:0.179
+iter:799 time:71.740 cost:522.649 data_fidelity:522.492 regularizer_penalty:0.157
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/projections_iter_799.png
+iter:899 time:81.290 cost:544.055 data_fidelity:543.869 regularizer_penalty:0.186
+iter:999 time:89.390 cost:548.750 data_fidelity:548.533 regularizer_penalty:0.218
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 91.77
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_anisotropic/0729_205143_mono_tau0.0006_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-06
+tau_n = 0.08
+Device:0 selected
+cuda:0
+Using regularizer: TV3DRegularizer
+iter:0 time:0.070 cost:4096.314 data_fidelity:4088.913 regularizer_penalty:7.401
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/projections_iter_0.png
+iter:99 time:9.980 cost:61.456 data_fidelity:59.727 regularizer_penalty:1.729
+iter:199 time:16.490 cost:148.402 data_fidelity:146.756 regularizer_penalty:1.646
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/projections_iter_199.png
+iter:299 time:24.460 cost:359.259 data_fidelity:357.747 regularizer_penalty:1.513
+iter:399 time:30.880 cost:483.745 data_fidelity:482.312 regularizer_penalty:1.433
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/slices_iter_399.png
+2025-07-29 20:54:51,738 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv (소요시간: 81.5초)
+2025-07-29 20:54:51,971 - INFO - 
+진행률: 5/15
+2025-07-29 20:54:51,971 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic
+2025-07-29 20:54:51,971 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-05, τn=0.06, reg=anisotropic
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/projections_iter_399.png
+iter:499 time:39.590 cost:534.494 data_fidelity:533.075 regularizer_penalty:1.419
+iter:599 time:46.250 cost:596.859 data_fidelity:595.455 regularizer_penalty:1.404
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/projections_iter_599.png
+iter:699 time:54.410 cost:642.111 data_fidelity:640.728 regularizer_penalty:1.383
+iter:799 time:60.400 cost:667.675 data_fidelity:666.288 regularizer_penalty:1.387
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/projections_iter_799.png
+iter:899 time:68.710 cost:704.244 data_fidelity:702.875 regularizer_penalty:1.369
+iter:999 time:75.300 cost:726.225 data_fidelity:724.867 regularizer_penalty:1.358
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 77.16
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-06_taun_0.08_3dtv/0729_205325_mono_tau0.0006_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-05
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+iter:0 time:0.100 cost:4089.771 data_fidelity:4088.913 regularizer_penalty:0.858
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/projections_iter_0.png
+iter:99 time:10.100 cost:67.016 data_fidelity:66.733 regularizer_penalty:0.282
+iter:199 time:17.560 cost:213.880 data_fidelity:213.698 regularizer_penalty:0.182
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/projections_iter_199.png
+iter:299 time:28.660 cost:349.085 data_fidelity:348.881 regularizer_penalty:0.204
+iter:399 time:37.020 cost:399.390 data_fidelity:399.213 regularizer_penalty:0.177
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/projections_iter_399.png
+iter:499 time:47.130 cost:453.790 data_fidelity:453.574 regularizer_penalty:0.216
+iter:599 time:54.460 cost:472.924 data_fidelity:472.670 regularizer_penalty:0.254
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/projections_iter_599.png
+iter:699 time:64.170 cost:507.074 data_fidelity:506.861 regularizer_penalty:0.213
+iter:799 time:72.380 cost:524.845 data_fidelity:524.645 regularizer_penalty:0.200
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/iter_799_slices
+2025-07-29 20:56:33,011 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic (소요시간: 97.5초)
+2025-07-29 20:56:33,268 - INFO - 
+진행률: 6/15
+2025-07-29 20:56:33,268 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv
+2025-07-29 20:56:33,268 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-05, τn=0.06, reg=3dtv
+2025-07-29 20:57:50,570 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv (소요시간: 73.4초)
+2025-07-29 20:57:50,970 - INFO - 
+진행률: 7/15
+2025-07-29 20:57:50,970 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic
+2025-07-29 20:57:50,970 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-05, τn=0.08, reg=anisotropic
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/projections_iter_799.png
+iter:899 time:82.570 cost:542.978 data_fidelity:542.755 regularizer_penalty:0.222
+iter:999 time:90.390 cost:574.245 data_fidelity:574.057 regularizer_penalty:0.188
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/projections_iter_999.png
+Total elapsed Time: 92.42
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_anisotropic/0729_205451_mono_tau0.0006_ztau6e-05/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-05
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: TV3DRegularizer
+iter:0 time:0.140 cost:4096.314 data_fidelity:4088.913 regularizer_penalty:7.401
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/projections_iter_0.png
+iter:99 time:9.160 cost:62.118 data_fidelity:60.486 regularizer_penalty:1.632
+iter:199 time:15.120 cost:151.571 data_fidelity:149.960 regularizer_penalty:1.611
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/projections_iter_199.png
+iter:299 time:22.380 cost:358.912 data_fidelity:357.417 regularizer_penalty:1.495
+iter:399 time:27.960 cost:486.377 data_fidelity:484.951 regularizer_penalty:1.425
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/projections_iter_399.png
+iter:499 time:35.090 cost:524.683 data_fidelity:523.250 regularizer_penalty:1.433
+iter:599 time:40.950 cost:580.108 data_fidelity:578.710 regularizer_penalty:1.397
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/projections_iter_599.png
+iter:699 time:48.100 cost:629.686 data_fidelity:628.300 regularizer_penalty:1.386
+iter:799 time:53.880 cost:654.859 data_fidelity:653.456 regularizer_penalty:1.404
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/projections_iter_799.png
+iter:899 time:61.600 cost:684.262 data_fidelity:682.873 regularizer_penalty:1.389
+iter:999 time:66.890 cost:710.678 data_fidelity:709.314 regularizer_penalty:1.363
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/projections_iter_999.png
+Total elapsed Time: 68.8
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.06_3dtv/0729_205633_mono_tau0.0006_ztau6e-05/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+2025-07-29 20:59:22,706 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic (소요시간: 88.0초)
+2025-07-29 20:59:22,874 - INFO - 
+진행률: 8/15
+2025-07-29 20:59:22,874 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv
+2025-07-29 20:59:22,874 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=6e-04, τz=6e-05, τn=0.08, reg=3dtv
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-05
+tau_n = 0.08
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+iter:0 time:0.090 cost:4089.771 data_fidelity:4088.913 regularizer_penalty:0.858
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/projections_iter_0.png
+iter:99 time:7.910 cost:67.016 data_fidelity:66.733 regularizer_penalty:0.282
+iter:199 time:15.320 cost:213.880 data_fidelity:213.698 regularizer_penalty:0.182
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/projections_iter_199.png
+iter:299 time:24.220 cost:349.085 data_fidelity:348.881 regularizer_penalty:0.204
+iter:399 time:31.620 cost:399.390 data_fidelity:399.213 regularizer_penalty:0.177
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/projections_iter_399.png
+iter:499 time:40.970 cost:453.790 data_fidelity:453.574 regularizer_penalty:0.216
+iter:599 time:48.320 cost:472.924 data_fidelity:472.670 regularizer_penalty:0.254
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/projections_iter_599.png
+iter:699 time:57.680 cost:507.074 data_fidelity:506.861 regularizer_penalty:0.213
+iter:799 time:65.020 cost:524.845 data_fidelity:524.645 regularizer_penalty:0.200
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/projections_iter_799.png
+iter:899 time:74.220 cost:542.978 data_fidelity:542.755 regularizer_penalty:0.222
+iter:999 time:80.740 cost:574.245 data_fidelity:574.057 regularizer_penalty:0.188
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/projections_iter_999.png
+Total elapsed Time: 82.95
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_anisotropic/0729_205750_mono_tau0.0006_ztau6e-05/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0006
+tau_z = 6e-05
+tau_n = 0.08
+Device:0 selected
+cuda:0
+Using regularizer: TV3DRegularizer
+iter:0 time:0.080 cost:4096.314 data_fidelity:4088.913 regularizer_penalty:7.401
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/projections_iter_0.png
+iter:99 time:8.950 cost:62.118 data_fidelity:60.486 regularizer_penalty:1.632
+iter:199 time:14.860 cost:151.571 data_fidelity:149.960 regularizer_penalty:1.611
+2025-07-29 21:00:41,729 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv (소요시간: 75.7초)
+2025-07-29 21:00:41,877 - INFO - 
+진행률: 9/15
+2025-07-29 21:00:41,877 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic
+2025-07-29 21:00:41,877 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=8e-04, τz=6e-06, τn=0.06, reg=anisotropic
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/projections_iter_199.png
+iter:299 time:22.410 cost:358.912 data_fidelity:357.417 regularizer_penalty:1.495
+iter:399 time:28.330 cost:486.377 data_fidelity:484.951 regularizer_penalty:1.425
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/projections_iter_399.png
+iter:499 time:36.430 cost:524.683 data_fidelity:523.250 regularizer_penalty:1.433
+iter:599 time:42.510 cost:580.108 data_fidelity:578.710 regularizer_penalty:1.397
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/projections_iter_599.png
+iter:699 time:50.220 cost:629.686 data_fidelity:628.300 regularizer_penalty:1.386
+iter:799 time:55.620 cost:654.859 data_fidelity:653.456 regularizer_penalty:1.404
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/projections_iter_799.png
+iter:899 time:63.060 cost:684.262 data_fidelity:682.873 regularizer_penalty:1.389
+iter:999 time:68.970 cost:710.678 data_fidelity:709.314 regularizer_penalty:1.363
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/projections_iter_999.png
+Total elapsed Time: 71.03
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_6e-04_tauz_6e-05_taun_0.08_3dtv/0729_205922_mono_tau0.0006_ztau6e-05/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0008
+tau_z = 6e-06
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+iter:0 time:0.080 cost:4089.243 data_fidelity:4088.913 regularizer_penalty:0.330
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/projections_iter_0.png
+iter:99 time:9.460 cost:67.116 data_fidelity:66.820 regularizer_penalty:0.296
+iter:199 time:16.280 cost:216.274 data_fidelity:216.091 regularizer_penalty:0.183
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/projections_iter_199.png
+iter:299 time:25.370 cost:339.971 data_fidelity:339.762 regularizer_penalty:0.209
+iter:399 time:32.450 cost:394.472 data_fidelity:394.297 regularizer_penalty:0.176
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/projections_iter_399.png
+iter:499 time:41.940 cost:445.393 data_fidelity:445.168 regularizer_penalty:0.225
+iter:599 time:49.520 cost:472.819 data_fidelity:472.602 regularizer_penalty:0.217
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/slices_iter_599.png
+2025-07-29 21:02:13,393 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic (소요시간: 88.5초)
+2025-07-29 21:02:14,168 - INFO - 
+진행률: 10/15
+2025-07-29 21:02:14,169 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv
+2025-07-29 21:02:14,169 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=8e-04, τz=6e-06, τn=0.06, reg=3dtv
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/projections_iter_599.png
+iter:699 time:58.810 cost:515.931 data_fidelity:515.751 regularizer_penalty:0.180
+iter:799 time:65.760 cost:536.816 data_fidelity:536.600 regularizer_penalty:0.216
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/projections_iter_799.png
+iter:899 time:74.140 cost:552.478 data_fidelity:552.272 regularizer_penalty:0.206
+iter:999 time:80.770 cost:569.296 data_fidelity:569.107 regularizer_penalty:0.188
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 82.76
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_anisotropic/0729_210041_mono_tau0.0008_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0008
+tau_z = 6e-06
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: TV3DRegularizer
+iter:0 time:0.090 cost:4098.781 data_fidelity:4088.913 regularizer_penalty:9.868
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/projections_iter_0.png
+iter:99 time:8.220 cost:62.752 data_fidelity:60.512 regularizer_penalty:2.240
+iter:199 time:13.150 cost:151.071 data_fidelity:148.884 regularizer_penalty:2.187
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/projections_iter_199.png
+iter:299 time:20.390 cost:358.167 data_fidelity:356.150 regularizer_penalty:2.017
+iter:399 time:25.160 cost:486.037 data_fidelity:484.125 regularizer_penalty:1.912
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/projections_iter_399.png
+iter:499 time:32.490 cost:524.324 data_fidelity:522.407 regularizer_penalty:1.917
+iter:599 time:38.380 cost:580.373 data_fidelity:578.505 regularizer_penalty:1.869
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/projections_iter_599.png
+iter:699 time:46.090 cost:630.602 data_fidelity:628.755 regularizer_penalty:1.847
+iter:799 time:51.610 cost:657.318 data_fidelity:655.458 regularizer_penalty:1.860
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/projections_iter_799.png
+iter:899 time:59.120 cost:689.810 data_fidelity:687.965 regularizer_penalty:1.846
+iter:999 time:65.210 cost:717.916 data_fidelity:716.103 regularizer_penalty:1.813
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/iter_999_slices
+2025-07-29 21:03:30,955 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv (소요시간: 72.0초)
+2025-07-29 21:03:31,158 - INFO - 
+진행률: 11/15
+2025-07-29 21:03:31,158 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic
+2025-07-29 21:03:31,158 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=8e-04, τz=6e-06, τn=0.08, reg=anisotropic
+2025-07-29 21:05:01,778 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic (소요시간: 85.4초)
+2025-07-29 21:05:01,985 - INFO - 
+진행률: 12/15
+2025-07-29 21:05:01,986 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv
+2025-07-29 21:05:01,986 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=8e-04, τz=6e-06, τn=0.08, reg=3dtv
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 67.73
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.06_3dtv/0729_210214_mono_tau0.0008_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0008
+tau_z = 6e-06
+tau_n = 0.08
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+iter:0 time:0.140 cost:4089.243 data_fidelity:4088.913 regularizer_penalty:0.330
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/projections_iter_0.png
+iter:99 time:10.200 cost:67.116 data_fidelity:66.820 regularizer_penalty:0.296
+iter:199 time:16.860 cost:216.274 data_fidelity:216.091 regularizer_penalty:0.183
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/projections_iter_199.png
+iter:299 time:25.400 cost:339.971 data_fidelity:339.762 regularizer_penalty:0.209
+iter:399 time:31.460 cost:394.472 data_fidelity:394.297 regularizer_penalty:0.176
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/projections_iter_399.png
+iter:499 time:40.310 cost:445.393 data_fidelity:445.168 regularizer_penalty:0.225
+iter:599 time:47.470 cost:472.819 data_fidelity:472.602 regularizer_penalty:0.217
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/projections_iter_599.png
+iter:699 time:56.320 cost:515.931 data_fidelity:515.751 regularizer_penalty:0.180
+iter:799 time:62.820 cost:536.816 data_fidelity:536.600 regularizer_penalty:0.216
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/projections_iter_799.png
+iter:899 time:71.630 cost:552.478 data_fidelity:552.272 regularizer_penalty:0.206
+iter:999 time:77.960 cost:569.296 data_fidelity:569.107 regularizer_penalty:0.188
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 79.8
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_anisotropic/0729_210331_mono_tau0.0008_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv
+mu1 = 0.3
+2025-07-29 21:06:21,790 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv (소요시간: 73.9초)
+2025-07-29 21:06:22,033 - INFO - 
+진행률: 13/15
+2025-07-29 21:06:22,034 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic
+2025-07-29 21:06:22,034 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=8e-04, τz=6e-05, τn=0.06, reg=anisotropic
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0008
+tau_z = 6e-06
+tau_n = 0.08
+Device:0 selected
+cuda:0
+Using regularizer: TV3DRegularizer
+iter:0 time:0.090 cost:4098.781 data_fidelity:4088.913 regularizer_penalty:9.868
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/projections_iter_0.png
+iter:99 time:8.450 cost:62.752 data_fidelity:60.512 regularizer_penalty:2.240
+iter:199 time:13.960 cost:151.071 data_fidelity:148.884 regularizer_penalty:2.187
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/projections_iter_199.png
+iter:299 time:21.560 cost:358.167 data_fidelity:356.150 regularizer_penalty:2.017
+iter:399 time:27.080 cost:486.037 data_fidelity:484.125 regularizer_penalty:1.912
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/projections_iter_399.png
+iter:499 time:34.700 cost:524.324 data_fidelity:522.407 regularizer_penalty:1.917
+iter:599 time:40.780 cost:580.373 data_fidelity:578.505 regularizer_penalty:1.869
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/projections_iter_599.png
+iter:699 time:48.420 cost:630.602 data_fidelity:628.755 regularizer_penalty:1.847
+iter:799 time:53.920 cost:657.318 data_fidelity:655.458 regularizer_penalty:1.860
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/projections_iter_799.png
+iter:899 time:61.390 cost:689.810 data_fidelity:687.965 regularizer_penalty:1.846
+iter:999 time:67.260 cost:717.916 data_fidelity:716.103 regularizer_penalty:1.813
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/projections_iter_999.png
+Total elapsed Time: 69.29
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-06_taun_0.08_3dtv/0729_210501_mono_tau0.0008_ztau6e-06/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0008
+tau_z = 6e-05
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+iter:0 time:0.090 cost:4089.837 data_fidelity:4088.913 regularizer_penalty:0.925
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/projections_iter_0.png
+iter:99 time:9.620 cost:67.196 data_fidelity:66.846 regularizer_penalty:0.351
+iter:199 time:16.990 cost:212.877 data_fidelity:212.651 regularizer_penalty:0.226
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/projections_iter_199.png
+iter:299 time:25.590 cost:327.589 data_fidelity:327.297 regularizer_penalty:0.292
+iter:399 time:32.120 cost:415.712 data_fidelity:415.493 regularizer_penalty:0.219
+2025-07-29 21:07:52,740 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic (소요시간: 86.8초)
+2025-07-29 21:07:53,178 - INFO - 
+진행률: 14/15
+2025-07-29 21:07:53,178 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv
+2025-07-29 21:07:53,179 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=8e-04, τz=6e-05, τn=0.06, reg=3dtv
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/projections_iter_399.png
+iter:499 time:40.900 cost:445.706 data_fidelity:445.393 regularizer_penalty:0.313
+iter:599 time:47.940 cost:500.571 data_fidelity:500.294 regularizer_penalty:0.277
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/projections_iter_599.png
+iter:699 time:56.870 cost:525.202 data_fidelity:524.906 regularizer_penalty:0.295
+iter:799 time:64.000 cost:540.117 data_fidelity:539.862 regularizer_penalty:0.255
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/projections_iter_799.png
+iter:899 time:73.250 cost:568.187 data_fidelity:567.959 regularizer_penalty:0.228
+iter:999 time:79.670 cost:584.850 data_fidelity:584.589 regularizer_penalty:0.261
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/projections_iter_999.png
+Total elapsed Time: 81.99
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_anisotropic/0729_210622_mono_tau0.0008_ztau6e-05/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0008
+tau_z = 6e-05
+tau_n = 0.06
+Device:0 selected
+cuda:0
+Using regularizer: TV3DRegularizer
+iter:0 time:0.080 cost:4098.781 data_fidelity:4088.913 regularizer_penalty:9.868
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/projections_iter_0.png
+iter:99 time:8.770 cost:62.673 data_fidelity:60.511 regularizer_penalty:2.162
+iter:199 time:14.650 cost:150.874 data_fidelity:148.730 regularizer_penalty:2.143
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/projections_iter_199.png
+iter:299 time:21.790 cost:359.147 data_fidelity:357.159 regularizer_penalty:1.988
+iter:399 time:27.190 cost:486.125 data_fidelity:484.229 regularizer_penalty:1.896
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/projections_iter_399.png
+iter:499 time:35.050 cost:525.520 data_fidelity:523.617 regularizer_penalty:1.903
+iter:599 time:40.670 cost:581.594 data_fidelity:579.737 regularizer_penalty:1.856
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/projections_iter_599.png
+iter:699 time:48.110 cost:631.408 data_fidelity:629.568 regularizer_penalty:1.840
+iter:799 time:53.800 cost:658.728 data_fidelity:656.878 regularizer_penalty:1.850
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/slices_iter_799.png
+2025-07-29 21:09:11,689 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv (소요시간: 75.3초)
+2025-07-29 21:09:11,950 - INFO - 
+진행률: 15/15
+2025-07-29 21:09:11,950 - INFO - 실험 시작: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic
+2025-07-29 21:09:11,950 - INFO - 파라미터: μ1=0.3, μ2=0.5, μ3=3.0, τ=8e-04, τz=6e-05, τn=0.08, reg=anisotropic
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/projections_iter_799.png
+iter:899 time:62.440 cost:691.316 data_fidelity:689.479 regularizer_penalty:1.836
+iter:999 time:68.290 cost:718.233 data_fidelity:716.424 regularizer_penalty:1.809
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/projections_iter_999.png
+Total elapsed Time: 70.31
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/iter_FINAL_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.06_3dtv/0729_210753_mono_tau0.0008_ztau6e-05/projections_iter_FINAL.png
+path_ref = 0
+save_every = 200
+save_fig = True
+show_figs = False
+color_to_process = mono
+image_bias = 0
+psf_bias = 0
+raw_bias = 0
+lateral_downsample = 8
+axial_downsample = 1
+start_z = 0
+end_z = 0
+useGPU = True
+numGPU = 0
+max_iter = 1000
+disp_figs = 200
+print_interval = 100
+regularizer = 3dtvz
+autotune = 1
+autotune_start_iter = 50
+autotune_interval = 10
+mu_inc = 1.15
+mu_dec = 1.15
+resid_tol = 1.3
+adaptive_tau = True
+tau_adaptation_rate = 0.95
+convergence_window = 20
+min_improvement_threshold = 0.0001
+roih = 700
+roiw = 700
+display_norm_method = log
+beta_z = 10
+psf_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/processed/psf_stack_39f60737_20250729_204539.mat
+img_file = /mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png
+save_dir = /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic
+mu1 = 0.3
+mu2 = 0.5
+mu3 = 3.0
+tau = 0.0008
+tau_z = 6e-05
+tau_n = 0.08
+Device:0 selected
+cuda:0
+Using regularizer: AnisotropicDiffusionRegularizer
+iter:0 time:0.150 cost:4089.837 data_fidelity:4088.913 regularizer_penalty:0.925
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/slices_iter_0.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/iter_0_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/projections_iter_0.png
+iter:99 time:11.260 cost:67.196 data_fidelity:66.846 regularizer_penalty:0.351
+iter:199 time:18.270 cost:212.877 data_fidelity:212.651 regularizer_penalty:0.226
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/slices_iter_199.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/iter_199_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/projections_iter_199.png
+iter:299 time:27.510 cost:327.589 data_fidelity:327.297 regularizer_penalty:0.292
+iter:399 time:35.120 cost:415.712 data_fidelity:415.493 regularizer_penalty:0.219
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/slices_iter_399.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/iter_399_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/projections_iter_399.png
+iter:499 time:44.420 cost:445.706 data_fidelity:445.393 regularizer_penalty:0.313
+iter:599 time:52.070 cost:500.571 data_fidelity:500.294 regularizer_penalty:0.277
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/slices_iter_599.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/iter_599_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/projections_iter_599.png
+iter:699 time:59.610 cost:525.202 data_fidelity:524.906 regularizer_penalty:0.295
+iter:799 time:66.930 cost:540.117 data_fidelity:539.862 regularizer_penalty:0.255
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/slices_iter_799.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/iter_799_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/projections_iter_799.png
+iter:899 time:77.100 cost:568.187 data_fidelity:567.959 regularizer_penalty:0.228
+iter:999 time:84.410 cost:584.850 data_fidelity:584.589 regularizer_penalty:0.261
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/slices_iter_999.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/iter_999_slices
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/projections_iter_999.png
+Total elapsed Time: 86.58
+Reconstruction Finished!
+
+Generating final visualizations...
+✓ Saved reconstruction figure: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/slices_iter_FINAL.png
+✓ Saved 11 individual slices to: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/iter_FINAL_slices
+2025-07-29 21:10:49,252 - INFO - 실험 완료: mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic (소요시간: 91.2초)
+2025-07-29 21:10:49,455 - INFO - ======================================================================
+2025-07-29 21:10:49,456 - INFO - 파라미터 스위핑 완료!
+2025-07-29 21:10:49,456 - INFO - 성공한 실험: 15/15
+2025-07-29 21:10:49,456 - INFO - 총 소요 시간: 1255.8초
+2025-07-29 21:10:49,456 - INFO - 평균 실험 시간: 83.7초 (성공한 실험 기준)
+2025-07-29 21:10:49,456 - INFO - ======================================================================
+✓ Saved projection plot: /mnt/NAS/Grants/25_AIOBIO/experiment/250729_recon/mu1_0.30_mu2_0.50_mu3_3.0_tau_8e-04_tauz_6e-05_taun_0.08_anisotropic/0729_210911_mono_tau0.0008_ztau6e-05/projections_iter_FINAL.png

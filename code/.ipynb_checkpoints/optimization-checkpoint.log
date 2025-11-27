@@ -1,0 +1,11 @@
+nohup: ignoring input
+2025-06-30 19:01:30,795 - INFO - Parameter optimization started
+2025-06-30 19:01:30,795 - INFO - Results directory: optimization_results_20250630_190130
+2025-06-30 19:01:30,795 - INFO - Starting parameter optimization
+2025-06-30 19:01:30,796 - INFO - Generated 648 parameter combinations for grid search
+2025-06-30 19:01:30,796 - INFO - Total combinations: 648
+2025-06-30 19:01:30,796 - INFO - Already completed: 0
+2025-06-30 19:01:30,796 - INFO - Remaining: 648
+2025-06-30 19:01:30,796 - INFO - Progress: 1/648
+2025-06-30 19:01:30,796 - INFO - Starting experiment exp_0000_1751277690
+2025-06-30 19:01:30,796 - INFO - Parameters: {'mu1': 0.5, 'mu2': 0.68, 'mu3': 3.0, 'tau': 0.0003, 'tau_z': 6e-05, 'regularizer': '3dtv', 'max_iter': 1000}
