@@ -25,6 +25,7 @@ import cv2
 import numpy as np
 from scipy import io
 from numpy import linalg as LA
+from utils import *
 
 
 # --- 새로운 패딩 함수 ---
@@ -227,108 +228,15 @@ def run_reconstruction_with_selected_psfs(psf_stack_path, labels):
     print("RECONSTRUCTION SETUP")
     print("=" * 60)
 
-    # 목표 리사이징 크기 정의
-    # target_size = 1024
-    # print(f"Target resizing size: {target_size} x {target_size}")
-
     # Get raw image path
     raw_image_path = input(
-        "Enter raw image path (or press Enter for '/home/hotdog/sample/25AIOBIO/_Recon3d/code/yasuo_07.0_crop_1500.png'): "
+        "Enter raw image numpy path (or press Enter for '/mnt/NAS/Grants/25_AIOBIO/experiment/251127/npy_background_removed/raw_7p0_bg_removed.npy'): "
     ).strip()
     if not raw_image_path:
         # raw_image_path = "C:/Users/LOQ/Documents/_research/_aiobio/RawImage/black_int_LM5/07.jpg"
-        raw_image_path = "/mnt/NAS/Grants/25_AIOBIO/experiment/250703_raw_measure/inpainting/07.0.png"
-        # raw_image_path = "/mnt/NAS/Grants/24_AIOBIO/2501_data/mask_1/mask1_psf_raw/black_int_LM3/07.jpg"
-        # raw_image_path = (
-        #     "/home/hotdog/sample/25AIOBIO/_Recon3d/code/yasuo_07.0_crop_1500.png"
-        # )
+        raw_image_path = "/mnt/NAS/Grants/25_AIOBIO/experiment/251127/npy_background_removed/raw_7p0_bg_removed.npy"
 
-    print(f"Using raw image: {raw_image_path}")
-
-    # raw_image_original = cv2.imread(raw_image_path, flags=cv2.IMREAD_UNCHANGED)
-    # raw_image_original = np.array(raw_image_original, dtype="float32")
-    # --- Raw 이미지 리사이징 ---
-    # print(f"Resizing raw image to {target_size}x{target_size}...")
-    # try:
-    #     # cv2.resize 사용 (dsize=(width, height) 순서 주의)
-    #     raw_image_resized = cv2.resize(
-    #         raw_image_original,
-    #         (target_size, target_size),
-    #         interpolation=cv2.INTER_LINEAR,
-    #     )  # Bilinear interpolation
-    #     print(f"Resized raw image shape: {raw_image_resized.shape}")
-    # except Exception as e:
-    #     print(f"Error resizing raw image: {e}")
-    #     return None
-
-    # # --- PSF 스택 로드 ---
-    # print(f"Loading PSF stack: {psf_stack_path}")
-    # try:
-    #     psf_data = io.loadmat(psf_stack_path)
-    #     if "psf_stack" not in psf_data:
-    #         raise KeyError("'psf_stack' key not found")
-    #     psf_stack_original_raw = psf_data[
-    #         "psf_stack"
-    #     ]  # Shape (H, W, num_slices) or (num_slices, H, W)
-
-    #     print(f"Loaded PSF stack shape (raw from .mat): {psf_stack_original_raw.shape}")
-
-    #     # --- Permute (Transpose) - 중요! ---
-    #     # .mat 파일 형식이 (H, W, num_slices)라고 가정
-    #     if (
-    #         psf_stack_original_raw.ndim == 3 and psf_stack_original_raw.shape[0] == 1300
-    #     ):  # Check if H=1300 is first dim
-    #         print("Permuting PSF stack dimensions from (H, W, D) to (D, H, W)...")
-    #         psf_stack_original = np.transpose(
-    #             psf_stack_original_raw, (2, 0, 1)
-    #         )  # (num_slices, H, W)
-    #     elif (
-    #         psf_stack_original_raw.ndim == 3 and psf_stack_original_raw.shape[0] != 1300
-    #     ):  # Assume already (D, H, W)
-    #         print("Assuming PSF stack is already in (D, H, W) format.")
-    #         psf_stack_original = psf_stack_original_raw
-    #     else:
-    #         raise ValueError(
-    #             f"Unexpected PSF stack dimension: {psf_stack_original_raw.shape}"
-    #         )
-
-    #     print(
-    #         f"Permuted PSF stack shape (before resize): {psf_stack_original.shape}"
-    #     )  # Should be (num_slices, 1300, 1300)
-
-    # except FileNotFoundError:
-    #     print(f"Error: PSF stack file not found: {psf_stack_path}")
-    #     return None
-    # except KeyError as e:
-    #     print(f"Error loading PSF stack: {e}")
-    #     return None
-    # except Exception as e:
-    #     print(f"Error loading/permuting PSF stack: {e}")
-    #     return None
-
-    # # --- PSF 스택 리사이징 ---
-    # print(f"Resizing PSF stack to {target_size}x{target_size}...")
-    # try:
-    #     num_slices = psf_stack_original.shape[0]  # <-- 이제 num_slices가 올바른 값
-    #     psf_stack_resized = np.zeros(
-    #         (num_slices, target_size, target_size), dtype=np.float32
-    #     )
-    #     for i in range(num_slices):
-    #         # 각 (1300, 1300) 슬라이스를 리사이징
-    #         resized_slice = cv2.resize(
-    #             psf_stack_original[i],
-    #             (target_size, target_size),
-    #             interpolation=cv2.INTER_LINEAR,
-    #         )
-    #         psf_stack_resized[i] = resized_slice
-    #     # 리사이징된 전체 스택 정규화 (선택 사항)
-    #     psf_stack_resized = psf_stack_resized / np.linalg.norm(psf_stack_resized)
-    #     print(
-    #         f"Resized PSF stack shape: {psf_stack_resized.shape}"
-    #     )  # <-- (num_slices, 1024, 1024) 확인!
-    # except Exception as e:
-    #     print(f"Error resizing PSF stack: {e}")
-    #     return None
+    print(f"Using raw image numpy path: {raw_image_path}")
 
     # Check if file exists
     if not os.path.exists(raw_image_path):
@@ -336,6 +244,13 @@ def run_reconstruction_with_selected_psfs(psf_stack_path, labels):
         proceed = input("Continue anyway? (y/n): ").strip().lower()
         if proceed not in ["y", "yes"]:
             return None
+
+    # preprocessing Debayering 진행
+    processed_green_img = debayer_RGGB_G(raw_image_path)
+
+    # 임시파일로 저장
+    temp_green_path = raw_image_path.replace(".npy", "_green_processed.npy")
+    np.save(temp_green_path, processed_green_img)
 
     # Select regularizer for tooth reconstruction
     reg_type = select_regularizer()
@@ -383,13 +298,13 @@ def run_reconstruction_with_selected_psfs(psf_stack_path, labels):
         # "resize": 1024,
         "path_ref": 0,
         "psf_file": psf_stack_path,
-        "img_file": raw_image_path,
+        "img_file": temp_green_path,  # preprocessed npy 파일
         # --- 리사이징 목표 크기 추가 ---
         # "target_resize_h": target_size,  # <-- 목표 높이
         # "target_resize_w": target_size,  # <-- 목표 너비
         # "psf_file": psf_stack_resized,
         # "img_file": raw_image_resized,
-        "save_dir": f"/mnt/NAS/Grants/25_AIOBIO/experiment/251028_recon/{dtstamp}_3d_recon_result/",
+        "save_dir": f"/mnt/NAS/Grants/25_AIOBIO/experiment/recon_2511/{dtstamp}_3d_/",
         # 'save_dir': "/mnt/NAS/Grants/24_AIOBIO/2503_data/3d_recon/ph2/step2/",  # if path_ref=1, start with /
         # Save image stack as .mat every N iterations. Use 0 to never save (except for at the end);
         "save_every": 100,

@@ -148,19 +148,36 @@ class ADMM3D:
         psf = self.img_resize(psf, "axial", self.axial_downsample)
         print("psf shape: ", psf.shape)
         # Load raw image
-        raw = cv2.imread(self.img_file, flags=cv2.IMREAD_UNCHANGED)
-        raw = np.array(raw, dtype="float32")
+        # [수정] 파일 확장자에 따라 로드 방식 분기
+        if self.img_file.endswith(".npy"):
+            # 1. Numpy 파일 로드
+            raw = np.load(self.img_file)
+            raw = raw.astype("float32")
+            print(f"Loaded .npy raw data. Shape: {raw.shape}")
 
-        if len(raw.shape) == 3:
-            if self.color_to_process.lower() in ["mono", "red", "green", "blue"]:
-                if self.color_to_process.lower() == "mono":
-                    raw = cv2.cvtColor(raw, cv2.COLOR_RGB2GRAY)
-                else:
+            # 2. 이미 Green 채널 추출된 2D 데이터라면 별도 변환 불필요
+            if raw.ndim == 2:
+                print("Raw data is 2D. Using as mono channel directly.")
+            elif raw.ndim == 3:
+                # 만약 3차원 .npy라면 기존 로직 처리를 위해 mono 변환 등 필요할 수 있음
+                # (사용자님 상황에서는 2D가 들어오므로 패스)
+                pass
+
+        else:
+            # 기존 이미지 파일 로드 로직 (png, tiff 등)
+            raw = cv2.imread(self.img_file, flags=cv2.IMREAD_UNCHANGED)
+            raw = np.array(raw, dtype="float32")
+
+            if len(raw.shape) == 3:
+                if self.color_to_process.lower() in ["mono", "red", "green", "blue"]:
+                    if self.color_to_process.lower() == "mono":
+                        raw = cv2.cvtColor(raw, cv2.COLOR_RGB2GRAY)
+                    else:
+                        raw = cv2.cvtColor(raw, cv2.COLOR_BGR2RGB)
+                        color_list = {"red": 0, "green": 1, "blue": 2}
+                        raw = raw[:, :, color_list[self.color_to_process.lower()]]
+                elif self.color_to_process.lower() in ["rg", "rgb"]:
                     raw = cv2.cvtColor(raw, cv2.COLOR_BGR2RGB)
-                    color_list = {"red": 0, "green": 1, "blue": 2}
-                    raw = raw[:, :, color_list[self.color_to_process.lower()]]
-            elif self.color_to_process.lower() in ["rg", "rgb"]:
-                raw = cv2.cvtColor(raw, cv2.COLOR_BGR2RGB)
 
         raw = raw - self.raw_bias
         raw[raw < 0] = 0
