@@ -221,9 +221,9 @@ class PSFPreprocessor:
             try:
                 if file_path.endswith(".npy"):
                     # [추가] Raw .npy 파일 처리 로직
-                    psf_image = debayer_RGGB_G(file_path, normalize=True)
+                    psf_img = debayer_RGGB_G(file_path, normalize=True)
 
-                    if psf_image is None:
+                    if psf_img is None:
                         raise ValueError(f"Failed to load {file_path}")
 
                 else:
