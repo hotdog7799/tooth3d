@@ -1,3 +1,4 @@
 raw_image/
 recon_result/
 code/data/recon/
+code/__pycache__

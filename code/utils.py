@@ -4,22 +4,37 @@ import cv2
 from tqdm import tqdm
 
 
-def debayer_RGGB_G(img_dir):
+def debayer_RGGB_G(img_path, normalize=True):
     """
-    for IMX708
-    1. load numpy
-    2. 8-bit * 2 -> 16-bit view(np.uint16)
-    3. Demosaicing (Bayer -> RGB)
+    Load raw .npy, extract Green channels, average them, and optionally normalize.
     """
-    raw_data_8 = np.load(img_dir)
+    # 1. Load numpy
+    try:
+        raw_data_u8 = np.load(img_path)
+    except Exception as e:
+        print(f"Error loading {img_path}: {e}")
+        return None
+
+    # 2. 8-bit * 2 -> 16-bit view
+    # 입력 데이터가 uint8로 패킹되어 있다고 가정
     raw_data_16 = raw_data_u8.view(np.uint16)
-    # split the channels
-    # raw_red = raw_data_16[1::2, 1::2]  # 홀수행, 홀수열
-    raw_green1 = raw_data_16[0::2, 1::2]  # 짝수행, 홀수열
-    raw_green2 = raw_data_16[1::2, 0::2]  # 홀수행, 짝수열
-    # raw_blue = raw_data_16[0::2, 0::2]  # 짝수행, 짝수열
-    # green average
-    raw_green = (raw_green1(np.float32) + raw_green2(np.float32)) / 2
+
+    # 3. Split the channels (Green extraction)
+    # Green1: 짝수행, 홀수열 (0,1), (0,3)...
+    # Green2: 홀수행, 짝수열 (1,0), (1,2)...
+    raw_green1 = raw_data_16[0::2, 1::2]
+    raw_green2 = raw_data_16[1::2, 0::2]
+
+    # 4. Green Average (float32 변환 필수)
+    # 문법 수정: raw_green1(np.float32) -> raw_green1.astype(np.float32)
+    raw_green = (raw_green1.astype(np.float32) + raw_green2.astype(np.float32)) / 2.0
+
+    # 5. [중요] Normalize (0 ~ 1)
+    if normalize:
+        max_val = raw_green.max()
+        if max_val > 0:
+            raw_green = raw_green / max_val
+
     return raw_green
 
 

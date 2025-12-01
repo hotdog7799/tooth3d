@@ -75,12 +75,13 @@ def interactive_psf_selection():
 
     # Step 1: Set up paths (modify these for your setup)
     psf_directory = input(
-        "Enter PSF image directory path (or press Enter for '/mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/'): "
+        "Enter PSF image directory path (or press Enter for '/mnt/NAS/Grants/25_AIOBIO/experiment/251124/npy/bg_removed/'): "
     ).strip()
     if not psf_directory:
         psf_directory = (
             # "/mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/cropped_2nd/"
-            "/mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/"
+            # "/mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/"
+            "/mnt/NAS/Grants/25_AIOBIO/experiment/251124/npy/bg_removed/"
         )
         # psf_directory = "/mnt/NAS/Grants/25_AIOBIO/experiment/250702_psf_measure/"
 
