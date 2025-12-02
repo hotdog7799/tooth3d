@@ -116,111 +116,84 @@ class ADMM3D:
 
     def init_data(self):
         """Load and preprocess PSF and raw image data."""
-        # Load PSF
+        print("Loading PSF...")
+        # 1. Load PSF
         psf = io.loadmat(self.psf_file, mat_dtype=True)["psf_stack"]
         psf = psf.astype("float32")
-        # --- PSF Permute (shape 확인 후 D, H, W 순서로) ---
-        if (
-            psf.ndim == 3 and psf.shape[0] != psf.shape[1]
-        ):  # Assume (D, H, W) or (H, W, D)
-            if (
-                psf.shape[0] < psf.shape[1] and psf.shape[0] < psf.shape[2]
-            ):  # If D is likely first dim
-                print("Assuming PSF is already (D, H, W).")
-            elif (
-                psf.shape[2] < psf.shape[0] and psf.shape[2] < psf.shape[1]
-            ):  # If D is likely last dim
-                print("Permuting PSF stack from (H, W, D) to (D, H, W)...")
-                psf = np.transpose(psf, (2, 0, 1))
+
+        # --- PSF Shape Check & Permute to (H, W, D) for resizing ---
+        # 우리는 리사이징을 위해 (H, W, D) 순서가 필요합니다.
+        if psf.ndim == 3:
+            # 만약 (D, H, W)로 추정되면 (Depth가 가장 작거나 첫 번째 차원일 때)
+            if psf.shape[0] < psf.shape[1] and psf.shape[0] < psf.shape[2]:
+                print(f"Permuting PSF from (D, H, W) {psf.shape} to (H, W, D)...")
+                psf = np.transpose(psf, (1, 2, 0))
+            elif psf.shape[2] < psf.shape[0] and psf.shape[2] < psf.shape[1]:
+                print(f"PSF seems to be (H, W, D) {psf.shape}. Keeping as is.")
             else:
-                print(
-                    f"Warning: Could not reliably determine PSF dimension order from shape {psf.shape}. Assuming (D, H, W)."
-                )
-        elif psf.ndim != 3:
-            raise ValueError(f"Unexpected PSF dimension: {psf.ndim}")
-        print(
-            f"Permuted PSF stack shape: {psf.shape}"
-        )  # Should be (num_slices, H_orig, W_orig)
+                # 구분이 모호할 경우 (H, W, D)라고 가정하거나 사용자 확인 필요
+                pass
+
+        print(f"PSF shape for processing: {psf.shape}")  # Should be (H, W, D)
+
+        # Preprocessing
         psf = psf - self.psf_bias
         psf[psf < 0] = 0
         psf = psf / LA.norm(psf)
+
+        # Resize (Now dimensions are correct for this function)
         psf = self.img_resize(psf, "lateral", self.lateral_downsample)
         psf = self.img_resize(psf, "axial", self.axial_downsample)
-        print("psf shape: ", psf.shape)
-        # Load raw image
-        # [수정] 파일 확장자에 따라 로드 방식 분기
+        print("Resized PSF shape (H, W, D): ", psf.shape)
+
+        # 2. Load Raw Image
+        print(f"Loading Raw Image: {self.img_file}")
         if self.img_file.endswith(".npy"):
-            # 1. Numpy 파일 로드
             raw = np.load(self.img_file)
             raw = raw.astype("float32")
-            print(f"Loaded .npy raw data. Shape: {raw.shape}")
-
-            # 2. 이미 Green 채널 추출된 2D 데이터라면 별도 변환 불필요
-            if raw.ndim == 2:
-                print("Raw data is 2D. Using as mono channel directly.")
-            elif raw.ndim == 3:
-                # 만약 3차원 .npy라면 기존 로직 처리를 위해 mono 변환 등 필요할 수 있음
-                # (사용자님 상황에서는 2D가 들어오므로 패스)
-                pass
-
+            # 3D 데이터(컬러 등)라면 mono로 변환 필요할 수 있음.
+            # 현재 코드는 2D Green channel만 들어온다고 가정.
         else:
-            # 기존 이미지 파일 로드 로직 (png, tiff 등)
             raw = cv2.imread(self.img_file, flags=cv2.IMREAD_UNCHANGED)
             raw = np.array(raw, dtype="float32")
-
+            # Handle Color Channels
             if len(raw.shape) == 3:
-                if self.color_to_process.lower() in ["mono", "red", "green", "blue"]:
-                    if self.color_to_process.lower() == "mono":
-                        raw = cv2.cvtColor(raw, cv2.COLOR_RGB2GRAY)
-                    else:
-                        raw = cv2.cvtColor(raw, cv2.COLOR_BGR2RGB)
-                        color_list = {"red": 0, "green": 1, "blue": 2}
-                        raw = raw[:, :, color_list[self.color_to_process.lower()]]
-                elif self.color_to_process.lower() in ["rg", "rgb"]:
+                if self.color_to_process.lower() == "mono":
+                    raw = cv2.cvtColor(raw, cv2.COLOR_RGB2GRAY)
+                else:
+                    # For specific channels, assuming BGR load from cv2
                     raw = cv2.cvtColor(raw, cv2.COLOR_BGR2RGB)
+                    color_map = {"red": 0, "green": 1, "blue": 2}
+                    if self.color_to_process.lower() in color_map:
+                        raw = raw[:, :, color_map[self.color_to_process.lower()]]
 
+        # Raw Preprocessing
         raw = raw - self.raw_bias
         raw[raw < 0] = 0
-        # --- 내부 리사이징 수행 ---
-        if self.target_resize_h is not None and self.target_resize_w is not None:
-            target_h, target_w = self.target_resize_h, self.target_resize_w
-            print(f"Resizing PSF stack internally to {target_h}x{target_w}...")
-            num_slices_psf = psf.shape[0]
-            psf_resized = np.zeros(
-                (num_slices_psf, target_h, target_w), dtype=np.float32
-            )
-            for i in range(num_slices_psf):
-                psf_resized[i] = cv2.resize(
-                    psf[i], (target_w, target_h), interpolation=cv2.INTER_LINEAR
-                )
-            psf = psf_resized  # Update psf to resized version
 
-            print(f"Resizing raw image internally to {target_h}x{target_w}...")
-            raw_resized = cv2.resize(
-                raw, (target_w, target_h), interpolation=cv2.INTER_LINEAR
-            )
-            raw = raw_resized  # Update raw to resized version
-        else:
-            print(
-                "No target resize dimensions specified, using original/downsampled size."
-            )
-            # --- 리사이징 안 할 경우, 기존 Downsampling 로직 적용 ---
-            psf = self.img_resize(psf, "lateral", self.lateral_downsample)
-            psf = self.img_resize(psf, "axial", self.axial_downsample)
-            raw = self.img_resize(raw, "lateral", self.lateral_downsample)
+        # Raw Resize
         raw = self.img_resize(raw, "lateral", self.lateral_downsample)
-        raw = raw / np.max(raw)
-        print("raw shape: ", raw.shape)
+
+        # Normalize Raw
+        if np.max(raw) > 0:
+            raw = raw / np.max(raw)
+
+        print("Resized Raw shape: ", raw.shape)
+
+        # 3. Final Permutation for ADMM Solver (D, H, W)
+        # ADMM solver (FFT logic) usually expects (Batch/Channel, H, W) or similar.
+        # 기존 코드의 pad2d 등을 고려할 때 PSF는 (D, H, W)여야 합니다.
+        if psf.ndim == 3:
+            psf = np.transpose(psf, (2, 0, 1))
+
+        print(f"Final PSF shape for solver (D, H, W): {psf.shape}")
 
         # Get dimensions
-        [self.Nx, self.Ny, self.Nz] = psf.shape
+        [self.Nz, self.Nx, self.Ny] = psf.shape  # Note: Adjusted to match (D, H, W)
 
         # Convert to tensors
         self.psf = torch.from_numpy(psf).to(self.device)
-        if len(raw.shape) == 2:
-            self.raw = torch.from_numpy(raw).to(self.device)
-        else:
-            self.raw = torch.from_numpy(raw).to(self.device)
+        self.raw = torch.from_numpy(raw).to(self.device)
 
         return psf, raw
 
@@ -502,25 +475,47 @@ class ADMM3D:
         return vkp
 
     # Utility methods
+    # [수정] (D, H, W) 차원 순서에 맞게 패딩 로직 변경
     def pad2d(self, x):
-        v_pad = int(np.floor(self.Nx / 2))
-        h_pad = int(np.floor(self.Ny / 2))
-        if x.ndim == 3:
-            return f.pad(x, (0, 0, h_pad, h_pad, v_pad, v_pad))
-        else:
-            tmp = torch.unsqueeze(x, dim=2)
+        v_pad = int(np.floor(self.Nx / 2))  # Nx is Height
+        h_pad = int(np.floor(self.Ny / 2))  # Ny is Width
+
+        # PyTorch pad 순서: (Left, Right, Top, Bottom, Front, Back) -> 역순으로 적용됨
+        # x가 2D (H, W) 일 때 -> (D, H, W)로 확장하며 패딩
+        if x.ndim == 2:
+            # (H, W) -> (1, H, W)
+            tmp = torch.unsqueeze(x, dim=0)
+            # dim 2(W): h_pad, dim 1(H): v_pad, dim 0(D): 0 ~ Nz-1
             return f.pad(
-                tmp, (0, self.Nz - 1, h_pad, h_pad, v_pad, v_pad), "constant", 0
+                tmp, (h_pad, h_pad, v_pad, v_pad, 0, self.Nz - 1), "constant", 0
             )
 
+        # x가 3D (D, H, W) 일 때 -> 공간축(H, W)만 패딩
+        elif x.ndim == 3:
+            return f.pad(x, (h_pad, h_pad, v_pad, v_pad, 0, 0))
+
+        return x
+
+    # [수정] (D, H, W) 차원 순서에 맞게 크롭 로직 변경
     def crop2d(self, x):
         v_crop = int(np.floor(self.Nx / 2))
         h_crop = int(np.floor(self.Ny / 2))
-        v, h = x.shape[:2]
-        return x[v_crop : v - v_crop, h_crop : h - h_crop]
 
+        # x shape: (D, H, W) or (H, W)
+        if x.ndim == 3:
+            # D 차원은 유지하고, H, W 차원만 크롭
+            return x[:, v_crop:-v_crop, h_crop:-h_crop]
+        elif x.ndim == 2:
+            return x[v_crop:-v_crop, h_crop:-h_crop]
+
+        return x
+
+    # [수정] 첫 번째 깊이(z=0) 슬라이스 추출 로직 변경
     def crop3d(self, x):
-        return self.crop2d(x[:, :, 0])
+        # x shape is (D, H, W). We want the first slice in z (index 0 of dim 0)
+        if x.ndim == 3:
+            return self.crop2d(x[0, :, :])
+        return self.crop2d(x)
 
     def Hadj(self, x):
         return torch.real(fft.ifftn(self.Hs_conj * fft.fftn(x)))

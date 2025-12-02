@@ -293,6 +293,14 @@ def run_reconstruction_with_selected_psfs(psf_stack_path, labels):
 
     dtstamp = time.strftime("%m%d_%H%M%S", time.localtime(time.time()))
 
+    # [수정 1] GPU 번호 입력 받기
+    gpu_input = input("Enter GPU ID (0-3, default=0): ").strip()
+    try:
+        gpu_id = int(gpu_input)
+    except ValueError:
+        gpu_id = 0
+    print(f"✓ Selected GPU: cuda:{gpu_id}")
+
     # ADMM Configuration
     config = {
         # File paths
@@ -326,7 +334,7 @@ def run_reconstruction_with_selected_psfs(psf_stack_path, labels):
         "end_z": 0,
         # GPU setup
         "useGPU": True,
-        "numGPU": 1,
+        "numGPU": gpu_id,
         # Recon Parameters
         "max_iter": max_iter,
         "disp_figs": disp_figs,
@@ -359,7 +367,13 @@ def run_reconstruction_with_selected_psfs(psf_stack_path, labels):
     print(f"Initializing {reg_type} regularizer...")
     import torch
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # [수정 3] 하드코딩된 'cuda:0' 제거하고 config의 gpu_id 사용
+    if config["useGPU"] and torch.cuda.is_available():
+        device = torch.device(f"cuda:{config['numGPU']}")
+    else:
+        device = torch.device("cpu")
+
+    # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     regularizer = create_regularizer(reg_type, device)
 
     # Initialize and run ADMM with selected regularizer
