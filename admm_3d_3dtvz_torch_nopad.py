@@ -133,8 +133,8 @@ class ADMM3D():
         return x[v_crop:v - v_crop, h_crop:h - h_crop]
 
     def crop3d(self, x):
-        return self.crop2d(x[:, :, 0])
-        # return x[:, :, 0]
+        # return self.crop2d(x[:, :, 0])
+        return x[:, :, 0]
 
     def l2norm(self, X):
         return torch.linalg.norm(X.ravel(), ord=2)
@@ -373,16 +373,16 @@ class ADMM3D():
         # Standard 3D TV solver (your current implementation)
         psf = psf / torch.linalg.norm(psf.ravel())
         psf = torch.roll(torch.flip(psf, dims=[2]), int(np.ceil(self.Nz/2)+1), dims=2)
-        self.Hs = fft.fftn(fft.ifftshift(self.pad2d(psf))) # Padding
-        # self.Hs = fft.fftn(fft.ifftshift(psf))
+        # self.Hs = fft.fftn(fft.ifftshift(self.pad2d(psf))) # Padding
+        self.Hs = fft.fftn(fft.ifftshift(psf))
         self.Hs_conj = torch.conj(self.Hs)
         self.HtH = torch.abs(self.Hs * self.Hs_conj)
         vk = torch.zeros_like(self.Hs, dtype=torch.float32)
         xi = vk.clone().detach()
         rho = vk.clone().detach()
-        Dtb = self.pad2d(b) # Padding
-        # Dtb = b
-        # Dtb = Dtb.unsqueeze(-1) # 추가
+        # Dtb = self.pad2d(b) # Padding
+        Dtb = b
+        Dtb = Dtb.unsqueeze(-1) # 추가
         PsiTPsi = self.generate_laplacian(vk)
         eta_1 = vk[:-1, :, :].clone().detach()
         eta_2 = vk[:, :-1, :].clone().detach()
@@ -392,8 +392,8 @@ class ADMM3D():
         Lvk2 = uk2.clone().detach()
         Lvk3 = uk3.clone().detach()
         v_mult = 1 / (self.mu1 * self.HtH + self.mu2 * PsiTPsi + self.mu3)
-        DtD = self.pad2d(torch.ones_like(b)) # Padding
-        # DtD = torch.ones_like(b)
+        # DtD = self.pad2d(torch.ones_like(b)) # Padding
+        DtD = torch.ones_like(b)
         nu_mult = 1 / (DtD + self.mu1)
         # nu_mult = nu_mult.unsqueeze(-1)
         
@@ -411,15 +411,15 @@ class ADMM3D():
         n = 0
         while n < self.max_iter:
             Hvk = Hvkp.clone().detach()
-            # print("n: ",n)
-            # print("xi shape:", xi.shape) #torch.Size([2592, 4608, 4])
-            # print("Hvk shape:", Hvk.shape)#torch.Size([2592, 4608, 4])
-            # print("Dtb shape:", Dtb.shape)#torch.Size([2592, 4608])
-            # print("nu_mult shape: ",nu_mult.shape)
-            # if nu_mult.dim() == 2:   # [Nx, Ny]
-                # nu_mult = nu_mult.unsqueeze(-1)  # [Nx, Ny, 1]
-                # print("nu_mult shape: ",nu_mult.shape)
-            nukp = nu_mult * (self.mu1 * (xi / self.mu1 + Hvk) + Dtb) #broadcast part
+            print("n: ",n)
+            print("xi shape:", xi.shape) #torch.Size([2592, 4608, 4])
+            print("Hvk shape:", Hvk.shape)#torch.Size([2592, 4608, 4])
+            print("Dtb shape:", Dtb.shape)#torch.Size([2592, 4608])
+            print("nu_mult shape: ",nu_mult.shape)
+            if nu_mult.dim() == 2:   # [Nx, Ny]
+                nu_mult = nu_mult.unsqueeze(-1)  # [Nx, Ny, 1]
+                print("unsqueezed nu_mult shape: ",nu_mult.shape)
+            nukp = nu_mult * (self.mu1 * (xi / self.mu1 + Hvk) + Dtb) #error
             wkp = torch.maximum(rho / self.mu3 + vk, torch.zeros_like(vk))
             [uk1, uk2, uk3] = self.soft_threshold_3d_z(Lvk1 + eta_1/self.mu2,
                                                         Lvk2 + eta_2/self.mu2,

@@ -134,6 +134,7 @@ class ADMM3D():
 
     def crop3d(self, x):
         return self.crop2d(x[:, :, 0])
+        # return x[:, :, 0]
 
     def l2norm(self, X):
         return torch.linalg.norm(X.ravel(), ord=2)
@@ -252,6 +253,7 @@ class ADMM3D():
         H, W, D = norm_v.shape
         # half_crop = 60
         half_crop = self.half_crop
+        print("half_crop = ",half_crop)
         crop_center_x = W // 2
         crop_center_y = H // 2
 
@@ -262,6 +264,9 @@ class ADMM3D():
         cropped_stack = np.empty((half_crop*2, half_crop*2, D), dtype=norm_v.dtype)
         for i in range(D):
             cropped_stack[:, :, i] = crop_img(norm_v[:, :, i])
+        print(f"crop_center_x = {crop_center_x}") # 4608
+        print(f"crop_center_y = {crop_center_y}") # 2592
+        print(f"cropped_stack shape = {cropped_stack.shape}")
 
         n_slices = cropped_stack.shape[2]
         n_cols = int(np.ceil(np.sqrt(n_slices)))
@@ -276,7 +281,7 @@ class ADMM3D():
             col = i % n_cols
             axes[row, col].imshow(cropped_stack[:, :, i], cmap='gray', vmin=0, vmax=1)
             axes[row, col].set_title("Slice {}".format(i))
-            axes[row, col].axis('off')
+            axes[row, col].axis('on')
         total_subplots = n_rows * n_cols
         for j in range(n_slices, total_subplots):
             row = j // n_cols
@@ -364,17 +369,20 @@ class ADMM3D():
         plt.tight_layout()
         plt.show()
 
-    def admm_solver(self, psf, b):
+    def admm_solver(self, psf, b): # 지금 쓰는 버전
         # Standard 3D TV solver (your current implementation)
         psf = psf / torch.linalg.norm(psf.ravel())
         psf = torch.roll(torch.flip(psf, dims=[2]), int(np.ceil(self.Nz/2)+1), dims=2)
-        self.Hs = fft.fftn(fft.ifftshift(self.pad2d(psf)))
+        self.Hs = fft.fftn(fft.ifftshift(self.pad2d(psf))) # Padding
+        # self.Hs = fft.fftn(fft.ifftshift(psf))
         self.Hs_conj = torch.conj(self.Hs)
         self.HtH = torch.abs(self.Hs * self.Hs_conj)
         vk = torch.zeros_like(self.Hs, dtype=torch.float32)
         xi = vk.clone().detach()
         rho = vk.clone().detach()
-        Dtb = self.pad2d(b)
+        Dtb = self.pad2d(b) # Padding
+        # Dtb = b
+        # Dtb = Dtb.unsqueeze(-1) # 추가
         PsiTPsi = self.generate_laplacian(vk)
         eta_1 = vk[:-1, :, :].clone().detach()
         eta_2 = vk[:, :-1, :].clone().detach()
@@ -384,8 +392,11 @@ class ADMM3D():
         Lvk2 = uk2.clone().detach()
         Lvk3 = uk3.clone().detach()
         v_mult = 1 / (self.mu1 * self.HtH + self.mu2 * PsiTPsi + self.mu3)
-        DtD = self.pad2d(torch.ones_like(b))
+        DtD = self.pad2d(torch.ones_like(b)) # Padding
+        # DtD = torch.ones_like(b)
         nu_mult = 1 / (DtD + self.mu1)
+        # nu_mult = nu_mult.unsqueeze(-1)
+        
         Hvkp = torch.zeros_like(vk)
         vkp = torch.zeros_like(vk)
         dual_resid_s = np.zeros(self.max_iter)
@@ -400,7 +411,15 @@ class ADMM3D():
         n = 0
         while n < self.max_iter:
             Hvk = Hvkp.clone().detach()
-            nukp = nu_mult * (self.mu1 * (xi / self.mu1 + Hvk) + Dtb)
+            # print("n: ",n)
+            # print("xi shape:", xi.shape) #torch.Size([2592, 4608, 4])
+            # print("Hvk shape:", Hvk.shape)#torch.Size([2592, 4608, 4])
+            # print("Dtb shape:", Dtb.shape)#torch.Size([2592, 4608])
+            # print("nu_mult shape: ",nu_mult.shape)
+            # if nu_mult.dim() == 2:   # [Nx, Ny]
+                # nu_mult = nu_mult.unsqueeze(-1)  # [Nx, Ny, 1]
+                # print("nu_mult shape: ",nu_mult.shape)
+            nukp = nu_mult * (self.mu1 * (xi / self.mu1 + Hvk) + Dtb) #broadcast part
             wkp = torch.maximum(rho / self.mu3 + vk, torch.zeros_like(vk))
             [uk1, uk2, uk3] = self.soft_threshold_3d_z(Lvk1 + eta_1/self.mu2,
                                                         Lvk2 + eta_2/self.mu2,
@@ -416,7 +435,10 @@ class ADMM3D():
             r_sv = Hvkp - nukp
             xi = xi + self.mu1 * r_sv
             dual_resid_s[n] = self.mu1 * self.l2norm(Hvk - Hvkp)
+            print("Hvkp[:, :, 0].shape = ",Hvkp[:, :, 0].shape)
             primal_resid_s[n] = self.l2norm(r_sv)
+            print("crop3d(Hvkp):", (self.crop3d(Hvkp)).shape)
+            print("self.raw:", (self.raw).shape)
             data_fidelity[n] = 0.5 * self.l2norm(self.crop3d(Hvkp) - self.raw)**2
             Lvk1_ = copy.deepcopy(Lvk1)
             Lvk2_ = copy.deepcopy(Lvk2)
@@ -449,6 +471,7 @@ class ADMM3D():
                 if mu1_update or mu2_update or mu3_update:
                     v_mult = 1 / (self.mu1 * self.HtH + self.mu2 * PsiTPsi + self.mu3)
                     nu_mult = 1 / (DtD + self.mu1)
+                    # nu_mult = nu_mult.unsqueeze(-1) # 패딩 안함
             vk = vkp
             self.objective_history.append(objective[n])
             self.data_fidelity_history.append(data_fidelity[n])
@@ -612,8 +635,8 @@ class ADMM3D():
             final_im = self.admm_solver(self.psf, self.raw)
         print('Total elapsed Time: {}'.format(np.round(time.time() - self.st, 2)))
         print('Reconstruction Finished!')
-        io.savemat("{}/{}/final_data_uncropped.mat".format(self.save_dir, self.dtstamp),
-                   {"final": final_im}, format='5', do_compression=True)
+        # io.savemat("{}/{}/final_data_uncropped.mat".format(self.save_dir, self.dtstamp),
+        #            {"final": final_im}, format='5', do_compression=True)
         return final_im
 
 if __name__ == "__main__":
